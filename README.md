@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/endric-daues/ipcauchy/"><img alt="quadpy" src="https://github.com/endric-daues/ipcauchy/ipcauchy.jpeg" width="60%"></a>
+  <a href="https://github.com/endric-daues/ipcauchy"><img alt="quadpy" src="https://github.com/endric-daues/ipcauchy/ipcauchy.jpeg" width="60%"></a>
   <p align="center">Counting Solutions to Knapsack Instances using Complex Path Integrals </p>
 </p>
 
