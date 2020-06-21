@@ -49,7 +49,7 @@ print('SP Solution Count: ', solutions_sp)
 ```
 
 
-Finally, we have included a function to retrieve the coefficients and RHS values from the Pisinger instances (http://hjemmesider.diku.dk/~pisinger/codes.html) used in the paper. These can also be used in the above code. Again, this code is set up for use in the example.py file.
+Finally, we have included a function to retrieve the coefficients and RHS values from the Pisinger instances (http://hjemmesider.diku.dk/~pisinger/codes.html) used in the paper. These can also be used in the above code. Again, this code is set up for use in the **example.py** file.
 
 ```
 f = open('./smallcoeff_pisinger/knapPI_1_50_1000.csv', "r")
