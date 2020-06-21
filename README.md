@@ -1,7 +1,4 @@
-<p align="center">
-  <a href="https://github.com/endric-daues/ipcauchy"><img alt="quadpy" src="https://github.com/endric-daues/ipcauchy/ipcauchy.jpeg" width="60%"></a>
-  <p align="center">Counting Solutions to Knapsack Instances using Complex Path Integrals </p>
-</p>
+![Screenshot](ipcauchy.jpeg)
 
 
 The code contained here follows the theory and numerical study described in (link to paper). Users can download the directory and use the example.py file to count solutions to Knapsack instances with a single constraint using a complex path integral that follows a circular, elliptic or shortest path. The code is written in Python 3.
