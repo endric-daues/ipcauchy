@@ -1,24 +1,8 @@
-<p align="center">
-  <a href="https://github.com/endric-daues/ipcauchy/"><img alt="quadpy" src="https://github.com/endric-daues/ipcauchy/ipcauchy.jpeg" width="60%"></a>
-  <p align="center">Counting Solutions to Knapsack Instances using Complex Path Integrals </p>
-</p>
-
-
-The code contained here follows the theory and numerical study described in (link to paper). Users can download the directory and use the example.py file to count solutions to Knapsack instances with a single constraint using a complex path integral that follows a circular, elliptic or shortest path. The code is written in Python 3.
-
-First, the quadpy numerical integration library must be installed. All other libraries should be included with Anaconda.
-
-'''
-pip install quadpy
-'''
-
-The following code is included in the example.py file, and can be used to test our implementation on any knapsack constraint. Here, a represents the coefficient vector and b represents the right-hand side constraint value.
-
-'''
 from integration_caller_functions import optimal_radius
 from integration_caller_functions import count_solutions_circle
 from integration_caller_functions import count_solutions_ellipse
 from integration_caller_functions import count_solutions_shortest_path
+from helpers import read_pisinger_file
 import math
 
 # Initiate a knapsack constraint
@@ -49,12 +33,10 @@ r_ = 0.001
 output_sp = count_solutions_shortest_path(a,b,r,r_,N)
 solutions_sp = round(output_sp[0].real,0)
 print('SP Solution Count: ', solutions_sp)
-'''
 
 
-Finally, we have included a function to retrieve the coefficients and RHS values from the Pisinger instances (http://hjemmesider.diku.dk/~pisinger/codes.html) used in the paper. These can also be used in the above code. Again, this code is set up for use in the example.py file.
 
-'''
+#We can also retrieve the Pisinger instances used in the numerical study
 f = open('./smallcoeff_pisinger/knapPI_1_50_1000.csv', "r")
 a_,b_= read_pisinger_file(f)
 
@@ -69,4 +51,3 @@ r = optimal_radius(0,a,b)
 output_sp = count_solutions_shortest_path(a,b,r,r_,N)
 solutions_sp = round(output_sp[0].real,0)
 print('SP Solution Count to p1: ', solutions_sp)
-'''
