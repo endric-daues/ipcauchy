@@ -3,7 +3,7 @@
 
 The code contained here follows the theory and numerical study described in (link to paper). Users can download the directory and use the **example.py** file to count solutions to Knapsack instances with a single constraint using a complex path integral that follows a circular, elliptic or shortest path. The code is written in Python 3.
 
-First, the quadpy numerical integration library must be installed. All other libraries should be included with Anaconda.
+First, the quadpy numerical integration library must be installed. Some additional libraries such as gmpy2 and Dijkstar may also require installation.
 
 ```
 pip install quadpy
