@@ -1,7 +1,7 @@
 ![Screenshot](ipcauchy.jpeg)
 
 
-The code contained here follows the theory and numerical study described in (link to paper). Users can download the directory and use the **example.py** file to count solutions to Knapsack instances with a single constraint using a complex path integral that follows a circular, elliptic or shortest path. The code is written in Python 3.
+The code contained here follows the theory and numerical study described in (http://www.optimization-online.org/DB_HTML/2020/06/7858.html). Users can download the directory and use the **example.py** file to count solutions to Knapsack instances with a single constraint using a complex path integral that follows a circular, elliptic or shortest path. The code is written in Python 3.
 
 First, the quadpy numerical integration library must be installed. Some additional libraries such as gmpy2 and Dijkstar may also require installation.
 
@@ -9,7 +9,7 @@ First, the quadpy numerical integration library must be installed. Some addition
 pip install quadpy
 ```
 
-The following code is included in the **example.py** file, and can be used to test our implementation on any knapsack constraint. Here, *a* represents the coefficient vector and *b* represents the right-hand side constraint value.
+The following code is included in the **example.py** file, and can be used to test our implementation on any non-negative knapsack constraint. Here, *a* represents the coefficient vector and *b* represents the right-hand side constraint value.
 
 ```
 from integration_caller_functions import optimal_radius
