@@ -47,6 +47,7 @@ a_,b_= read_pisinger_file(f)
 #Select the first Pisinger instance, p1
 a = a_[0]
 b = b_[0]
+print('Pisinger Instance ')
 #print('a: ',a)
 #print('b: ',b)
 
@@ -55,3 +56,4 @@ r = optimal_radius(0,a,b)
 output_sp = count_solutions_shortest_path(a,b,r,r_,N)
 solutions_sp = round(output_sp[0].real,0)
 print('SP Solution Count to p1: ', solutions_sp)
+print('Integration Time: {}s'.format(round(output_sp[1]),3))
