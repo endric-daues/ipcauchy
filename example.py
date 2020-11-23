@@ -9,6 +9,10 @@ import math
 a = [2,2,3,4,5]
 b = 10
 
+print('Coefficients: {}'.format(a))
+print('b value: {}'.format(b))
+
+
 #determine the optimal bypass point for this instance, r
 r = optimal_radius(0,a,b)
 
