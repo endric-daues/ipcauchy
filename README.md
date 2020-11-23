@@ -13,6 +13,10 @@ pip install quadpy==0.13.6
 pip install dijkstar
 ```
 
+```
+pip install gmpy2
+```
+
 The following code is included in the **example.py** file, and can be used to test our implementation on any non-negative knapsack constraint. Here, *a* represents the coefficient vector and *b* represents the right-hand side constraint value.
 
 ```
