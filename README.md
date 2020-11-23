@@ -6,7 +6,7 @@ The code contained here follows the theory and numerical study described in (htt
 First, the quadpy numerical integration library must be installed. Some additional libraries such as gmpy2 and Dijkstar may also require installation.
 
 ```
-pip install quadpy=0.13.6
+pip install quadpy==0.13.6
 ```
 
 ```
