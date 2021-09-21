@@ -66,8 +66,8 @@ a_,b_= read_pisinger_file(f)
 # Select the first Pisinger instance, p1
 a = a_[0]
 b = b_[0]
-#print('a: ',a)
-#print('b: ',b)
+# print('a: ',a)
+# print('b: ',b)
 
 # Run the shortest path parameterization for this instance
 r = optimal_radius(0,a,b)
