@@ -1,0 +1,3 @@
+quadpy==0.13.6
+dijkstar
+gmpy2
