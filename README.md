@@ -6,15 +6,7 @@ The code contained here follows the theory and numerical study described in (htt
 First, the quadpy numerical integration library must be installed. Some additional libraries such as gmpy2 and Dijkstar may also require installation.
 
 ```
-pip install quadpy==0.13.6
-```
-
-```
-pip install dijkstar
-```
-
-```
-pip install gmpy2
+pip install -r requirements.txt
 ```
 
 The following code is included in the **example.py** file, and can be used to test our implementation on any non-negative knapsack constraint. Here, *a* represents the coefficient vector and *b* represents the right-hand side constraint value.
