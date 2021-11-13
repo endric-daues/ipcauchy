@@ -36,23 +36,23 @@ Here are some examples to get you started.
 
 **Count solutions to Pisinger Instance P1 using a circular integration path**
 ```
-conda run python runner.py --method circle --file instances/pisinger_instance_p1.json
+python runner.py --method circle --file instances/pisinger_instance_p1.json
 ```
 
 
 **Count solutions to Pisinger Instance P1 using an elliptic integration path**
 ```
-conda run python runner.py --method ellipse --file instances/pisinger_instance_p1.json
+python runner.py --method ellipse --file instances/pisinger_instance_p1.json
 ```
 
 
 **Count solutions to Pisinger Instance P1 using the shortest path integration method (N=36, r=0.001)**
 ```
-conda run python runner.py --method shortest_path --file instances/pisinger_instance_p1.json
+python runner.py --method shortest_path --file instances/pisinger_instance_p1.json
 ```
 
 
 **Count solutions to Pisinger Instance P20 using the shortest path integration method (N=360, r=0.001)**
 ```
-conda run python runner.py --method shortest_path --file instances/pisinger_instance_p20.json --N 360 --r 0.001
+python runner.py --method shortest_path --file instances/pisinger_instance_p20.json --N 360 --r 0.001
 ```
