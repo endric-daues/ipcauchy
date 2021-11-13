@@ -9,6 +9,9 @@ import math
 
 
 if __name__ == '__main__':
+
+    
+
     # Initiate a knapsack constraint
     a = [2, 2, 3, 4, 5]
     b = 10
@@ -31,7 +34,7 @@ if __name__ == '__main__':
     solutions_ellipse = round(output_ellipse[0].real, 0)
     print('Ellipse Solution Count: ', solutions_ellipse)
 
-    # count solutions using a shortest parameterization 
+    # count solutions using a shortest parameterization
     # with N angular nodes and a radial distance of r_ and
     # a bypass point of r
 
