@@ -22,7 +22,7 @@ To demonstrate the integration methods used in the numerical study, we have prov
 Use the **runner.py** file to run the code with parameters in your terminal as follows.
 
 ```
-python runner.py --method [integration method] --file [instance json] --N [Optional (SP): Number of Angular Nodes] --r [Optional (SP): radial distance]
+python runner.py --method [integration method] --file [instance json] --N [Optional (SP): number of angular nodes] --r [Optional (SP): radial distance]
 ```
 
 You can also view the parameter help by using
