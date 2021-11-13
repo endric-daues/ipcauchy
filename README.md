@@ -1,77 +1,55 @@
 ![Screenshot](ipcauchy.jpeg)
 
 
-The code contained here follows the theory and numerical study described in (http://www.optimization-online.org/DB_HTML/2020/06/7858.html). Users can download the directory and use the **example.py** file to count solutions to Knapsack instances with a single constraint using a complex path integral that follows a circular, elliptic or shortest path. The code is written in Python 3 and is compatible with Python 3.6<=.
+Welcome! The code contained here follows the theory and numerical study described in (http://www.optimization-online.org/DB_HTML/2020/06/7858.html). Users can download the directory and use the **runner.py** file to count solutions to Knapsack instances with a single equality constraint using a complex path integral that follows a circular, elliptic or shortest path. This code is compatible with Python 3.8.
 
-First, the quadpy numerical integration library must be installed. Some additional libraries such as gmpy2 and Dijkstar may also require installation.
+To install the dependencies use
 
 ```
 pip install -r requirements.txt
 ```
 
-The following code is included in the **example.py** file, and can be used to test our implementation on any non-negative knapsack constraint. Here, *a* represents the coefficient vector and *b* represents the right-hand side constraint value.
+To demonstrate the integration methods used in the numerical study, we have provided three example instances in the **instances** directory. You can add your own instances using the simple **json** format. 
 
 ```
-from integration_caller_functions import (
-    optimal_radius,
-    count_solutions_circle,
-    count_solutions_ellipse,
-    count_solutions_shortest_path
-)
-from helpers import read_pisinger_file
-import math
+{
+    "name": "instance 1",
+    "a": [2, 2, 3, 4, 5],
+    "b": 10
+}
 
+```
 
-if __name__ == '__main__':
-    # Initiate a knapsack constraint
-    a = [2, 2, 3, 4, 5]
-    b = 10
+Use the **runner.py** file to run the code with parameters using the following parameters in your terminal.
 
-    print('Coefficients: {}'.format(a))
-    print('b value: {}'.format(b))
+```
+python runner.py --method [integration method] --file [instance json] --N [Optional (SP): Number of Angular Nodes] --r [Optional (SP): radial distance]
+```
 
-    # determine the optimal bypass point for this instance, r
-    r = optimal_radius(0, a, b)
+You can also view the parameter help by using
 
-    # count solutions using a circular parameterization with radius r
-    output_circle = count_solutions_circle(a, b, r)
-    solutions_circle = round(output_circle[0].real, 0)
-    print('Circle Solution Count: ', solutions_circle)
+```
+python runner.py --helph
+```
 
-    # count solutions using a elliptic parameterization with radii R1 and R2
-    R1 = r
-    R2 = optimal_radius(math.pi / 2, a, b)
-    output_ellipse = count_solutions_ellipse(a, b, R1, R2)
-    solutions_ellipse = round(output_ellipse[0].real, 0)
-    print('Ellipse Solution Count: ', solutions_ellipse)
+Here are some examples to get you started.
 
-    # count solutions using a shortest parameterization 
-    # with N angular nodes and a radial distance of r_ and
-    # a bypass point of r
+*Count solutions to Pisinger Instance P1 using a circular integration path*
+```
+conda run python runner.py --method circle --file instances/pisinger_instance_p1.json
+```
 
-    N = 36
-    r_ = 0.001
+*Count solutions to Pisinger Instance P1 using an elliptic integration path*
+```
+conda run python runner.py --method ellipse --file instances/pisinger_instance_p1.json
+```
 
-    output_sp = count_solutions_shortest_path(a, b, r, r_, N)
-    solutions_sp = round(output_sp[0].real,0)
-    print('SP Solution Count: ', solutions_sp)
+*Count solutions to Pisinger Instance P1 using a the shortest path integration method (N=36, r=0.001*
+```
+conda run python runner.py --method shortest_path --file instances/pisinger_instance_p1.json
+```
 
-    # We can also retrieve the Pisinger instances used in the numerical study
-    f = open('./smallcoeff_pisinger/knapPI_1_50_1000.csv', "r")
-    a_, b_ = read_pisinger_file(f)
-
-    # Select the first Pisinger instance, p1
-    a = a_[0]
-    b = b_[0]
-    print('Pisinger Instance ')
-    # print('a: ',a)
-    # print('b: ',b)
-
-    # Run the shortest path parameterization for this instance
-    r = optimal_radius(0, a, b)
-    output_sp = count_solutions_shortest_path(a, b, r, r_, N)
-    solutions_sp = round(output_sp[0].real, 0)
-    print('SP Solution Count to p1: ', solutions_sp)
-    print('Integration Time: {}s'.format(round(output_sp[1]), 3))
-
+*Count solutions to Pisinger Instance P20 using a the shortest path integration method (N=360, r=0.001)*
+```
+conda run python runner.py --method shortest_path --file instances/pisinger_instance_p20.json --N 360 --r 0.001
 ```
