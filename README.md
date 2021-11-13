@@ -17,7 +17,6 @@ To demonstrate the integration methods used in the numerical study, we have prov
     "a": [2, 2, 3, 4, 5],
     "b": 10
 }
-
 ```
 
 Use the **runner.py** file to run the code with parameters using the following parameters in your terminal.
@@ -29,27 +28,31 @@ python runner.py --method [integration method] --file [instance json] --N [Optio
 You can also view the parameter help by using
 
 ```
-python runner.py --helph
+python runner.py --help
 ```
 
 Here are some examples to get you started.
 
-*Count solutions to Pisinger Instance P1 using a circular integration path*
+
+**Count solutions to Pisinger Instance P1 using a circular integration path**
 ```
 conda run python runner.py --method circle --file instances/pisinger_instance_p1.json
 ```
 
-*Count solutions to Pisinger Instance P1 using an elliptic integration path*
+
+**Count solutions to Pisinger Instance P1 using an elliptic integration path**
 ```
 conda run python runner.py --method ellipse --file instances/pisinger_instance_p1.json
 ```
 
-*Count solutions to Pisinger Instance P1 using a the shortest path integration method (N=36, r=0.001*
+
+**Count solutions to Pisinger Instance P1 using a the shortest path integration method (N=36, r=0.001)**
 ```
 conda run python runner.py --method shortest_path --file instances/pisinger_instance_p1.json
 ```
 
-*Count solutions to Pisinger Instance P20 using a the shortest path integration method (N=360, r=0.001)*
+
+**Count solutions to Pisinger Instance P20 using a the shortest path integration method (N=360, r=0.001)**
 ```
 conda run python runner.py --method shortest_path --file instances/pisinger_instance_p20.json --N 360 --r 0.001
 ```
