@@ -15,20 +15,20 @@ from helpers import g
 
 
 def optimal_radius(angle, a, b, lower_bound=0.5, upper_bound=0.999):
-    '''
+    """
     Takes in the knapsack instance and returns the optimal radius using
-    Brent´s method to find the zero of the derivative at a specific angle
-    '''
+    Brent's method to find the zero of the derivative at a specific angle
+    """
     return opt.brentq(lambda r: g(r, angle, a, b), lower_bound, upper_bound)
 
 
 def count_solutions_circle(a, b, R, alpha=0, beta=2*math.pi, error=1):
-    '''
+    """
     Evaluates the integral (3) on a cricular path parameterized by the
     radius R. Uses the quadpy library to compute the integral with an adaptive
     quadrature approach. Returns the integral value as well as an error
     estimate.
-    '''
+    """
     val = quadpy.line_segment.integrate_adaptive(
         lambda t: integrand_adaptive(t, a, b, R, gamma, gamma_der),
         [alpha, beta],
@@ -40,12 +40,12 @@ def count_solutions_circle(a, b, R, alpha=0, beta=2*math.pi, error=1):
 
 
 def count_solutions_ellipse(a, b, R1, R2, alpha=0, beta=2*math.pi, error=1):
-    '''
+    """
     Evaluates the integral (3) on an elliptic path parameterized
     by the radii R1 (real axis) and R2. Uses the quadpy library to
     compute the integral with an adaptive quadrature approach.
     Returns the integral value as well as an error estimate.
-    '''
+    """
     val = (
         quadpy
         .line_segment
@@ -64,11 +64,11 @@ def count_solutions_ellipse(a, b, R1, R2, alpha=0, beta=2*math.pi, error=1):
 
 def count_solutions_shortest_path(a, b, start_radius,
                                   radius_delta, N, error=1):
-    '''
+    """
     Solves the shortest path given a,b and outputs the integral,
     moves along arcs. The minimum radius is determined automatically
     given the optimal radius procedure.
-    '''
+    """
 
     start_radius = round(start_radius, 15)
     epsilon = round((2 * math.pi) / (720), 15)
@@ -111,7 +111,7 @@ def count_solutions_shortest_path(a, b, start_radius,
                 angle_adjustment_integral(a, b, theta1,
                                           theta2, r1, gamma_circle_rad,
                                           gamma_der_circle_rad, error)[0]
-                )
+            )
 
         else:
             z1 = convert(r1, theta1)
