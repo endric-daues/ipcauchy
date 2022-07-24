@@ -1,7 +1,7 @@
 ![Screenshot](ipcauchy.jpeg)
 
 
-Welcome! The code contained here follows the theory and numerical study described in (http://www.optimization-online.org/DB_HTML/2020/06/7858.html). Users can download the directory and use the **runner.py** file to count solutions to Knapsack instances with a single equality constraint using a complex path integral that follows a circular, elliptic or shortest path. This code is compatible with Python 3.8.
+The code contained here follows the theory and numerical study described in (https://pubsonline.informs.org/doi/abs/10.1287/ijoc.2021.1142). Users can download the directory and use the **runner.py** file to count solutions to Knapsack instances with a single equality constraint using a complex path integral that follows a circular, elliptic or shortest path. This code is compatible with Python 3.8.
 
 To install the dependencies use
 
